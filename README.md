@@ -1,3 +1,5 @@
+This is a fork of Chris Penner's application by Tanner Legvold. The only change is to lines 372 through 388 (approximately) for the purpose of making the navigation keybindings use the arrow keys instead of the vim keys
+
 # Jet - A Structural JSON editor
 
 <!-- toc GFM -->
