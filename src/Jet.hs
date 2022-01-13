@@ -875,12 +875,12 @@ toCofree t = FF.hylo alg FF.project $ t
 helpImg :: Vty.Image
 helpImg =
   let helps =
-        [ ("h", "ascend"),
-          ("l", "descend"),
-          ("j", "next sibling"),
-          ("k", "previous sibling"),
-          ("J", "move down (in array)"),
-          ("K", "move up (in array)"),
+        [ ("<LEFT>", "ascend"),
+          ("<RIGHT>", "descend"),
+          ("<DOWN>", "next sibling"),
+          ("<UP>", "previous sibling"),
+          ("<S-DOWN>", "move down (in array)"),
+          ("<S-UP>", "move up (in array)"),
           ("i", "enter edit mode (string/number)"),
           ("<C-s>", "save file"),
           ("<SPACE>", "toggle boolean"),
