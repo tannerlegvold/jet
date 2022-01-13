@@ -1,4 +1,12 @@
-This is a fork of Chris Penner's application by Tanner Legvold. The only change is to lines 372 through 388 (approximately) for the purpose of making the navigation keybindings use the arrow keys instead of the vim keys
+This is a fork of Chris Penner's application by Tanner Legvold. The only change is to lines 372 through 388 (approximately) for the purpose of making the navigation keybindings use the arrow keys instead of the vim keys. See https://github.com/tannerlegvold/jet/commit/b838181dda379e116c14f305c8af2c9afe652a83#diff-a82a3273851155e728dc685a1a3bcf3ba26d3d56a6cf502388ea9eb8a9a0eb39.
+
+To use: 
+```
+git clone https://github.com/tannerlegvold/jet.git
+cd jet
+stack build --copy-bins # this takes a while the first time
+```
+for me at least, the executable is now in ~/.local/bin
 
 # Jet - A Structural JSON editor
 
