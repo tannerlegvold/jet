@@ -368,24 +368,26 @@ handleEvent evt zipper = do
     handleMove z =
       case evt of
         EvKey key mods -> case key of
-          -- move up
-          KChar 'h' -> z & outOf
-          -- move down
-          KChar 'l' -> do
+        
+          -- Tanner's changes begin here
+          KLeft -> z & outOf
+          KRight -> do
             z & Z.focus_ . folded_ .~ NotFolded
               & into
-          -- next sibling
-          KChar 'j' -> z & sibling Forward
-          -- move down
-          KChar 'J' -> do
-            pushUndo z
-            pure (z & moveElement Forward)
-          -- prev sibling
-          KChar 'k' -> z & sibling Backward
-          -- move up
-          KChar 'K' -> do
-            pushUndo z
-            pure (z & moveElement Backward)
+          KDown -> case mods of
+            []       -> z & sibling Forward
+            [MShift] -> do
+              pushUndo z
+              pure (z & moveElement Forward) 
+            _        -> z & sibling Forward
+          KUp -> case mods of
+            []       -> z & sibling Backward
+            [MShift] -> do
+              pushUndo z
+              pure (z & moveElement Backward)
+            _        -> z & sibling Backward
+          -- Tanner's changes end here
+            
           -- add new node
           KChar 'i' -> do
             pushUndo z
